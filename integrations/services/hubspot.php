@@ -21,20 +21,11 @@ function cmplz_hubspot_clicker() {
 			document.addEventListener("cmplz_enable_category", cmplzHubspotScriptHandler);
 			function cmplzHubspotScriptHandler(consentData) {
 				let hubspotAcceptBtn = document.getElementById("hs-eu-confirmation-button");
-				let hubspotDeclinetBtn = document.getElementById("hs-eu-decline-button");
 				if ( consentData.detail.category === 'marketing' ) {
 					if ( hubspotAcceptBtn != null ) {
 						hubspotAcceptBtn.click();
 					}
-				} else {
-					if ( hubspotDeclinetBtn != null ) {
-						hubspotDeclinetBtn.click();
-					}
-				}
-
-				if ( hubspotAcceptBtn ) {
-					hubspotAcceptBtn.parentNode.removeChild(hubspotAcceptBtn);
-				}
+				} 
 			}
 		</script>
 		<?php
