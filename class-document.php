@@ -3045,12 +3045,31 @@ if ( ! class_exists( "cmplz_document" ) ) {
 
 				$output_mode = $save_to_file ? 'F' : 'I';
 				$mpdf->Output( $file_title . ".pdf", $output_mode );
+				//clean up temp dir
+				$this->delete_files_directories_recursively($temp_dir);
 			} else {
 				$_POST['cmplz_generate_snapshot_error'] = true;
 				unset( $_POST['cmplz_generate_snapshot'] );
 			}
 		}
+
+		/**
+		 * @param string $dir
+		 * Delete files and directories recursively. Used to clear the tmp folder
+		 * @since 6.3.0
+		 */
+
+		private function delete_files_directories_recursively( $dir ) {
+			if ( strpos( $dir, 'complianz/tmp' ) !== false ) {
+				foreach ( glob( $dir . '/*' ) as $file ) {
+					if ( is_dir( $file ) ) {
+						$this->delete_files_directories_recursively( $file );
+					} else {
+						unlink( $file );
+					}
+				}
+				rmdir( $dir );
+			}
+		}
 	}
-
-
-} //class closure
+}
