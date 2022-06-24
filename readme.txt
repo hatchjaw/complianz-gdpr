@@ -172,6 +172,9 @@ The Brazilian General Data Protection Law is similar to the GDPR, the UK-GDPR it
 With some custom CSS this is possible, but we do not consider a cookie wall to be GDPR compliant, so it's not actively supported. We do, however, have the option to create a Soft Cookie Wall. Which blocks interaction with the website, but dismissing remains a possibility.
 
 == Changelog ==
+=  =
+* Improvement: clear tmp directory after pdf generation, props @kernvy
+
 = 6.2.0 =
 * New: Beaver Builder Power Pack
 * New: Superfly integration
