@@ -1482,7 +1482,7 @@ if (!function_exists('cmplz_upgrade_to_premium')) {
 	 * @return string
 	 */
 	function cmplz_upgrade_to_premium( $url, $add_space = true ) {
-		$html = cmplz_sprintf( __( "%sUpgrade%s", 'complianz-gdpr' ), '<a class="cmplz-upgrade-to-premium" target="_blank" href="' . $url . '">', '</a>' );
+		$html =  '<a class="cmplz-upgrade-to-premium" target="_blank" href="' . $url . '">'.__( "Upgrade", 'complianz-gdpr' ). '</a>';
 		if ( $add_space ) {
 			$html = '&nbsp;' . $html;
 		}

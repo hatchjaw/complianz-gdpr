@@ -859,9 +859,9 @@ $this->fields = $this->fields + array(
 				'yes',
 			),
 			'default' => 'no',
-			'comment' =>  cmplz_sprintf(__("GEO IP based redirect is available in %spremium%s", "complianz-gdpr"), '<a href="https://complianz.io/l/pricing/" target="_blank">', '</a>'),
+			'comment' =>  cmplz_sprintf(__("GEO IP based redirect is available in %sPremium%s", "complianz-gdpr"), '<a href="https://complianz.io/l/pricing/" target="_blank">', '</a>'),
 			'source'   => 'wizard',
-			'label'    => __("Do you want to use region redirect on the relevant documents?", 'complianz-gdpr'),
+			'label'    => __("Do you want to use region redirect on the relevant documents?", 'complianz-gdpr').cmplz_upgrade_to_premium('https://complianz.io/pricing'),
 		),
 
 		'add_pages_to_menu' => array(

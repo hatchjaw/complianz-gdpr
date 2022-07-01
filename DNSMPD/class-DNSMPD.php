@@ -451,7 +451,7 @@ if ( ! class_exists( "cmplz_DNSMPD" ) ) {
 					$this->send_notification_mail();
 					$message = __( "Your request has been processed successfully!", 'complianz-gdpr' );
 				} else {
-					$message = __( "Your email address was already registered!", 'complianz-gdpr' );
+					$message = __( "Your request could not be processed. A request is already in progress for this email address or the form is not complete.", 'complianz-gdpr' );
 				}
 			}
 

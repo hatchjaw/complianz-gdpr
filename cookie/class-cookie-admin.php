@@ -3023,8 +3023,17 @@ if ( ! class_exists( "cmplz_cookie_admin" ) ) {
 
 		public function get_supported_languages( $count = false ) {
 			$site_locale = cmplz_sanitize_language( get_locale() );
-
 			$languages = array( $site_locale => $site_locale );
+
+			//QTranslate
+			if ( defined('QTX_VERSION') ) {
+				$enabled_languages = get_option( 'qtranslate_enabled_languages' );
+				foreach ($enabled_languages as $language_code){
+					if (!in_array($language_code, $languages)){
+						$languages[$language_code] = $language_code;
+					}
+				}
+			}
 
 			if ( function_exists( 'icl_register_string' ) ) {
 				$wpml = apply_filters( 'wpml_active_languages', null,
