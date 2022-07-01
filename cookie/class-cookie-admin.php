@@ -3028,9 +3028,11 @@ if ( ! class_exists( "cmplz_cookie_admin" ) ) {
 			//QTranslate
 			if ( defined('QTX_VERSION') ) {
 				$enabled_languages = get_option( 'qtranslate_enabled_languages' );
-				foreach ($enabled_languages as $language_code){
-					if (!in_array($language_code, $languages)){
-						$languages[$language_code] = $language_code;
+				if (is_array($enabled_languages)) {
+					foreach ( $enabled_languages as $language_code ) {
+						if ( ! in_array( $language_code, $languages ) ) {
+							$languages[ $language_code ] = $language_code;
+						}
 					}
 				}
 			}
